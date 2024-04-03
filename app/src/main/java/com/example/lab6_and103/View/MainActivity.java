@@ -78,40 +78,40 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
     private void handleCallDataFruits() {
         swipeRefreshLayout.setRefreshing(true);
-//        httpRequest.callAPI().getFruits().enqueue(new Callback<Response<ArrayList<Fruit>>>() {
-//            @Override
-//            public void onResponse(Call<Response<ArrayList<Fruit>>> call, retrofit2.Response<Response<ArrayList<Fruit>>> response) {
-//                if (response.isSuccessful()) {
-//                    if (response.body().getStatus() == 200) {
-//                        list = response.body().getData();
-//                        getData();
-//                        Log.d(TAG, "onResponse: " + list);
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<Response<ArrayList<Fruit>>> call, Throwable t) {
-//
-//            }
-//        });
-        httpRequest.callAPI().getFruitToken(token).enqueue(new Callback<Response<ArrayList<Fruit>>>() {
-            @Override
-            public void onResponse(Call<Response<ArrayList<Fruit>>> call, retrofit2.Response<Response<ArrayList<Fruit>>> response) {
-                if (response.isSuccessful()) {
-                    if (response.body().getStatus() == 200) {
-                        list = response.body().getData();
-                        getData();
-                        Log.d(TAG, "onResponse: " + list);
-                    }
-                }
-            }
+       httpRequest.callAPI().getFruits().enqueue(new Callback<Response<ArrayList<Fruit>>>() {
+           @Override
+           public void onResponse(Call<Response<ArrayList<Fruit>>> call, retrofit2.Response<Response<ArrayList<Fruit>>> response) {
+               if (response.isSuccessful()) {
+                   if (response.body().getStatus() == 200) {
+                       list = response.body().getData();
+                       getData();
+                       Log.d(TAG, "onResponse: " + list);
+                   }
+               }
+           }
 
-            @Override
-            public void onFailure(Call<Response<ArrayList<Fruit>>> call, Throwable t) {
+           @Override
+           public void onFailure(Call<Response<ArrayList<Fruit>>> call, Throwable t) {
 
-            }
-        });
+           }
+       });
+        // httpRequest.callAPI().getFruitToken(token).enqueue(new Callback<Response<ArrayList<Fruit>>>() {
+        //     @Override
+        //     public void onResponse(Call<Response<ArrayList<Fruit>>> call, retrofit2.Response<Response<ArrayList<Fruit>>> response) {
+        //         if (response.isSuccessful()) {
+        //             if (response.body().getStatus() == 200) {
+        //                 list = response.body().getData();
+        //                 getData();
+        //                 Log.d(TAG, "onResponse: " + list);
+        //             }
+        //         }
+        //     }
+
+        //     @Override
+        //     public void onFailure(Call<Response<ArrayList<Fruit>>> call, Throwable t) {
+
+        //     }
+        // });
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
